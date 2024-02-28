@@ -7,6 +7,7 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
+import { Category } from './collections/SharedCategory'
 
 export default buildConfig({
   admin: {
@@ -15,7 +16,8 @@ export default buildConfig({
   },
   editor: slateEditor({}),
   collections: [
-    Users
+    Users,
+    Category
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
