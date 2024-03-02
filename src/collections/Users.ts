@@ -28,7 +28,7 @@ const Users: CollectionConfig = {
             type: "select",
             options: [
                 { label: "Admin", value: "admin" },
-                { label: "Super Admin", value: "super_admin" },
+                { label: "User", value: "user" },
             ],
             required: true,
         },
