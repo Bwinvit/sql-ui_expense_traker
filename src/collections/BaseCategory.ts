@@ -1,8 +1,8 @@
 import { CollectionConfig } from "payload/types";
-import { isAdminOrCreatedBy } from "../utils/Access";
+import { isAdmin, isAuthenticated } from "../utils/Access";
 
-const Category: CollectionConfig = {
-    slug: "category",
+const BaseCategory: CollectionConfig = {
+    slug: "baseCategory",
     admin: {
         useAsTitle: "title",
     },
@@ -41,9 +41,9 @@ const Category: CollectionConfig = {
         },
     ],
     access: {
-        read: isAdminOrCreatedBy,
-        update: isAdminOrCreatedBy,
-        delete: isAdminOrCreatedBy,
+        read: isAuthenticated,
+        update: isAdmin,
+        delete: isAdmin,
     },
     hooks: {
         beforeChange: [
@@ -59,4 +59,4 @@ const Category: CollectionConfig = {
       },
 };
 
-export default Category;
+export default BaseCategory;
